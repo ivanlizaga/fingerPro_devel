@@ -73,7 +73,6 @@ dev.off()
 sources.file <- system.file("extdata", "Raigani_2025.csv", package = "fingerPro")
 data <- read.csv(sources.file)
 rm(sources.file)
-data <- read.csv("G:/My Drive/Congress and workshops/0_Fingerprinting_Courses/4_Plymouth_2025/Raigani_2025.csv")
 
 # Run the CI method
   results_CI <- individual_tracer_analysis(data, iter = 4000, seed = 1234567L)
@@ -174,4 +173,5 @@ grid.arrange(plot_results(rs_pair_1, y_high = 1, violin = F, colors = c("#996300
 # 2) Use all previous tools combined with the CI, CR and the triangles together with your expert knowledge, 
 #     the unmixing is only the icing on the cake after you understand your data.
 # 3) New methods and improvements are being constantly uploaded to the repository, so in case of doubts do not hesitate
+
 #     to contact the developers || lizaga.ivan10@gmail.com
