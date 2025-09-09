@@ -17,6 +17,13 @@
 #' @export
 unmix <- function(data, iter = 1000L, variability = "SEM", lvp = TRUE, constrained = FALSE, resolution = NA, seed = 123456L)
 {
+    if(is.numeric(iter)){ iter <- iter} else { 
+    if(iter == "very short") iter <- 500
+    if(iter == "short")      iter <- 1000
+    if(iter == "medium")     iter <- 5000
+    if(iter == "long")       iter <- 20000
+    if(iter == "bananas")    iter <- 100000
+  }
   # Check if multiple mixture samples are present in the data.
   # If so, this block processes each mixture sample individually.
 	mixture_n = nrow(inputMixture(data))
@@ -177,4 +184,3 @@ unmix <- function(data, iter = 1000L, variability = "SEM", lvp = TRUE, constrain
 	
   return(results)
 }
-
